@@ -1,0 +1,41 @@
+SUPERMERCADO(id_supermercado(PK),m2_super,fecha_super,situacion_super,direccion_super;
+
+DIRECTOR (DNI_director(PK, UNIQUE),Nombre_director,telefono_director,apellidos_director,email_director,direccion_director);
+
+PEDIDOS (num_pedido(PK, UNIQUE),fecha_pedido(FK, NOT NULL));
+
+LINEA_PEDIDO (numero_pedido + numero_linea)(PK)
+
+PRODUCTO (codigo(PK),genero,familia,descuento_socio,pecio_IVA);
+
+PROVEEDORES (razon_social(PK), direccion_social,nombre_comercial);
+
+CONTACTO_PROVEEDOR (id_contacto(PK),telefono_contacto,cargo,nombre,apellidos);
+
+CLIENTE-SOCIO (DNI_cliente(PK) + dni_director(FK),e-mail,apellidos,telefono,dirección,nombre);
+
+VENDEDOR (dni_vendedor(PK),e-mail,apellidos,nombre,direccion,telefono);
+
+VENTA (id_venta(PK),fecha); 
+
+PERSONAL (dni_personal(PK),nombre_personal,apellidos_personal,telefono_personal,direccion_personal,mail_personal);
+
+EMPLEADO (dni_personal(PK,FK,NOT NULL);
+
+RELACIONES
+
+DIRIGE (id_supermercado + dni_director(PK),m2,fecha,regimen_compra_o_alquiler,direccion);
+
+SOLICITA (num_pedido + id_supermercado(PK), empleado,fecha_pedido);
+
+CONTIENE (codigo_producto + numero_pedido(PK),genero,familia,descuento_socio,pecio_IVA);
+
+INTERVIENE (id_venta + cliente_socio(PK),fecha);
+
+REALIZA (id_venta + dni_vendedor(PK), fecha;
+
+SIRVEN (num_pedido + razon_social(PK),direccion_social);
+
+TIENE (id_contacto + razon_social(PK),telefono_contacto,cargo,nombre,apellidos);
+
+CONSTA (num_linea + id_venta(PK), id_venta,fecha);

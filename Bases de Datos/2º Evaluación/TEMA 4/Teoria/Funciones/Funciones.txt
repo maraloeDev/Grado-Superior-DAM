@@ -1,0 +1,19 @@
+--PRUEBA DE FUNCIONES
+
+--FUNCIONES DE CADENA
+
+select chr(65) from dual;
+
+select 'Desarrollo ' || ' de ' || ' Aplicaciones ' from dual;
+
+select concat('Desarrollo ',concat(' de ', 'Aplicaciones')) from dual;
+
+select rtrim(ltrim('                   Hola      Caracola            ')) from dual;
+
+select lpad('Desarrollo',20) from dual;
+
+select replace('Desarrollo', 'll', 'e') from dual;
+
+select substr('Desarrollo', 5) from dual;
+
+select instr('Desarrollo', 'r') from dual;

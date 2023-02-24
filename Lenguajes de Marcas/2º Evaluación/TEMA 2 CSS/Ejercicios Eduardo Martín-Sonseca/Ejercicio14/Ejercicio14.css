@@ -1,0 +1,22 @@
+img{
+    position: absolute;
+}
+#uno{
+    margin-top: 0%;
+    margin-left: 0%;
+}
+#dos{
+    margin-top: 5%;
+    margin-left: 10%;
+}
+#tres{
+    margin-top: 10%;
+    margin-left: 20%;
+}
+#cuatro{
+    margin-top: 15%;
+    margin-left: 30%;
+}
+img:hover{
+    border: solid red;
+}

@@ -1,0 +1,162 @@
+select * from hr.departments;
+select * from hr.job_history;
+select * from hr.jobs;
+select * from hr.employees;
+select * from hr.locations;
+select * from hr.countries;
+select * from hr.regions;
+
+--NUEVOS
+
+--1 Muestra las diferentes regiones con sus paises.
+select regions.region_name, countries.country_name
+from hr.regions, hr.countries
+where regions.region_id =  countries.region_id;
+
+-- 2. Muestra cada empleado la fecha de inicio y fecha de fin de su historico de puestos.
+select employees.first_name, employees.hire_date, job_history.end_date
+from hr.employees, hr.job_history
+where employees.employee_id = job_history.employee_id;
+
+-- 3. Modifica la consulta anterior añadiendo el numero de días que ha permanecido en cada puesto.
+select employees.first_name,(job_history.end_date - job_history.start_date ) "dias"
+from hr.employees, hr.job_history
+where employees.employee_id = job_history.employee_id;
+
+-- 4. Muestra los empleados que tienen como manager a 'Steven King'.
+select e.first_name
+from hr.employees e,  hr.employees m 
+where m.first_name
+like 'Steven'
+and m.last_name ='King'
+and e.manager_id = m.employee_id;
+
+-- 5. Modifica la consulta anterior, mostrando solo los empleados con salario superior a 3000 euros, mostrando ademas el puesto que ocupan.
+select e.first_name
+from hr.employees e,  hr.employees m 
+where m.first_name
+like 'Steven'
+and m.last_name ='King'
+and e.manager_id = m.employee_id
+and e.salary > 3000;
+
+-- 6. Muestra los empleados con su salario, el puesto que tienen y su rango de salarios (del puesto) mostrando adema si el empleado esta dentro o fuera del rango (DECODE).
+select employees.first_name "empleado", jobs.job_title "trabajo", emp_details_view.salary, 
+decode(emp_details_view.salary,employees.salary,'si', 'no') "decode"
+from hr.employees, hr.jobs, hr.emp_details_view
+where employees.job_id = jobs.job_id and emp_details_view.job_id = jobs.job_id;
+
+-- 7. Muestra los departamentos junto con las licalidades en las que se encuentran.
+select departments.department_name "departamento", locations.street_address "calle", locations.city "ciudad" from hr.departments, hr.locations
+where departments.location_id = locations.location_id;
+
+-- 8. Modifica la consulta anterior para mostrar solo los departamentos ubicados en 'United King'.
+select departments.department_name "departamento", locations.street_address "calle", locations.city "ciudad" from hr.departments, hr.locations
+where departments.location_id = locations.location_id;
+
+-- 9. Muestra los paises que se encuentran en 'Africa'.
+select countries.country_name "pais" from hr.countries, hr.regions where countries.region_id = regions.region_id and regions.region_name like '%Africa%';
+
+-- 10. Muestra los empleados (codigo, nombre y apellido) junto con el email
+select employees.employee_id "codigo", employees.first_name "nombre", employees.last_name "apellidos", employees.email "email" from hr.employees;
+
+--11 Mostrar el numero de empleados contratados cada año
+select count(employees.employee_id) "n empleados", to_char(employees.hire_date, 'yyyy') "Año"
+from hr.employees
+group by to_char(employees.hire_date, 'yyyy');
+
+--12 Mostrar el n de empleados a cargo de cada manager
+select count(e.employee_id) "numero de empleados", m.first_name "manager"
+from hr.employees e, hr.employees m
+where m.employee_id = e.manager_id
+group by m.employee_id, m.first_name, m.last_name;
+
+--13. Mostrar el num de departamentos que hay en cada codigo postal.
+select nvl(locations.postal_code, 'Sin codigo postal') "CP",
+       count(departments.department_id) "Numero de departamentos"
+from hr.locations, hr.departments
+where locations.location_id = departments.location_id
+group by locations.postal_code
+order by 1;
+
+--14 Mostrar el n de empleados que tienen el mismo puesto y el total de salario ordenado por puesto con mayor numero de empleados
+select count(employees.employee_id) "numero de empleados", jobs.job_title, sum(jobs.min_salary + jobs.max_salary) "total de salario"
+from hr.employees,hr.jobs
+group by employees.job_id,jobs.job_id, jobs.job_title;
+
+--15 Mostrar los empleados que han pasado por mas de un puesto en la empresa
+select employees.first_name,count(jobs.job_id) "numero de cambios"
+from hr.jobs,hr.employees
+where employees.job_id = jobs.job_id
+having count(jobs.job_id)>1
+group by employees.first_name;
+
+--16 Mostrar las regiones con mas de 5 paises
+select regions.region_name,count(countries.country_id)
+where countries.region_id = regions.region_id 
+having count(countries.country_id)>5
+group by regions.region_name;
+
+--17 Mostrar por cada puesto el n de rotaciones en la empresa, ordenando los resultados por el puesto que ha tenido mas rotaciones
+select jobs.job_title "Puesto", count(job_history.employee_id) "Numero de rotaciones"
+from hr.jobs, hr.job_history
+where jobs.job_id = job_history.job_id
+group by jobs.job_id, jobs.job_title
+order by count(job_history.employee_id) desc;
+
+
+--18. Mostrar los empleados con sus departamentos, incluyendo los empleados no asignados
+--    a ningún departamento.
+select employees.employee_id "id empleado", concat(employees.first_name,concat(' ', employees.last_name)) "Empleado",
+       departments.department_id "id dept", departments.department_name "Nombre dept"
+from hr.employees, hr.departments
+where employees.department_id = departments.department_id(+)
+order by departments.department_id;
+
+--formato estandar
+select employees.employee_id "id empleado", concat(employees.first_name,concat(' ', employees.last_name)) "Empleado",
+       departments.department_id "id dept", departments.department_name "Nombre dept"
+from hr.employees left outer join hr.departments
+on employees.department_id = departments.department_id 
+order by departments.department_id desc;
+
+--19. Mostrar los empleados con sus departamentos, incluyendo los departamentos sin 
+--    empleados.
+select employees.employee_id "id empleado", concat(employees.first_name,concat(' ', employees.last_name)) "Empleado",
+       departments.department_id "id dept", departments.department_name "Nombre dept"
+from hr.employees, hr.departments
+where employees.department_id(+) = departments.department_id
+order by departments.department_id;
+
+--formato estandar
+select employees.employee_id "id empleado", concat(employees.first_name,concat(' ', employees.last_name)) "Empleado",
+       departments.department_id "id dept", departments.department_name "Nombre dept"
+from hr.employees right outer join hr.departments
+on employees.department_id = departments.department_id 
+order by departments.department_id desc;
+
+--20. Mostrar los empleados con sus departamentos, incluyendo los empleados no asignados
+--    a ningún departamento y los departamentos sin empleados.
+--solo se puede hacer con la estandar 
+select employees.employee_id "id empleado", concat(employees.first_name,concat(' ', employees.last_name)) "Empleado",
+       departments.department_id "id dept", departments.department_name "Nombre dept"
+from hr.employees full outer join hr.departments
+on employees.department_id = departments.department_id 
+order by departments.department_id desc;
+
+--21. Mostrar el numero de departamentos que hay en cada localidad incluyendo las loc.
+--    que no tienen ningun departamento, en cuyo caso el resultado será 0. 
+select count(departments.department_id) "Numero de departamentos", locations.city "ciudad"
+from hr.departments, hr.locations
+where departments.location_id(+) = locations.location_id
+group by locations.location_id, locations.city
+order by locations.location_id;
+
+--formato estandar
+select count(departments.department_id) "Numero de departamentos", locations.city "ciudad"
+from hr.departments right outer join hr.locations
+on departments.location_id = locations.location_id
+group by locations.location_id, locations.city
+order by locations.location_id;
+
+

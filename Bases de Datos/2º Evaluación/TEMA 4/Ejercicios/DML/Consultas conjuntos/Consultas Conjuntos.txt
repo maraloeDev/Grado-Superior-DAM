@@ -1,0 +1,38 @@
+select * from alumnos;
+select * from antiguos;
+select * from nuevos;
+
+-- 1. Mostrar los alumnos actualmente matriculados y los del próximo curso.
+select * from alumnos
+union
+select * from nuevos;
+
+-- 2. Mostrar los alumnos actualmente matriculados que ya estuvieron en el centro anteriormente.
+select * from alumnos
+union
+select * from antiguos;
+
+-- 3. Mostrar los alumnos actualemnte matriculados y que no son antiguos alumnos.
+select * from alumnos
+minus
+select * from antiguos;
+
+-- 4. Mostrar los alumnos actualemnte matriculados en el centro que además han reservado plaza para el
+--    próximo curso y que no son antiguos alumnos.
+select * from nuevos
+intersect
+select * from alumnos
+minus
+select * from antiguos;
+
+-- 5. Mostrar los alumnos actualmente matriculados que no son antiguos alumnos y que no han reservado plaza.
+select * from alumnos
+minus
+select * from antiguos
+minus
+select * from nuevos;
+
+-- 6. Mostrar los alumnos actualmente matriculados en el centro y los antiguos alumnos.
+select * from alumnos
+union
+select * from antiguos;

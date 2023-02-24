@@ -1,0 +1,32 @@
+body {
+  margin: 0px;
+}
+
+.propiedades1 {
+  margin: 50px;
+  border: groove blue;
+  margin-top: 0px;
+
+}
+
+#normal{
+  height: 200px;
+  width: 200px;
+  float: right;
+}
+
+.propiedades2 {
+  margin: 10px;
+  border: dotted red;
+}
+
+.propiedades1 span {
+  color: red;
+}
+.propiedades2 span {
+  color: blue;
+}
+img{
+  position: absolute;
+}
+

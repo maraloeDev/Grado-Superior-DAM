@@ -1,0 +1,25 @@
+#posicionrelativa {
+    position: relative;
+    top: 200px;
+    left: 400px;
+    border: green 5px solid;
+  }
+#posicionabsoluta {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  border: red 5px solid;
+}
+
+#posicionsticky { /* El espacio se respeta*/
+    position: sticky;
+    border: blueviolet 5px solid;
+    top: 50px;
+    left: 60%;
+}
+#posicionfija {
+    position: fixed;
+    border: yellow 5px solid;
+    top: 200px;
+    left: 600px;
+  }

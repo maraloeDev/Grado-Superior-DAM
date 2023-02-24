@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Comunidad>
+
+<vecino1>
+    <codigovecino>1234567</codigovecino>
+    <nombre>Juan Carlos</nombre>
+    <apellidos>Perez</apellidos>
+    <portal>25</portal>
+    <piso>12</piso>
+    <letra>A</letra>
+    <ccc>123456789E</ccc>
+    <cargo>Presidente</cargo>
+</vecino1>
+
+<vecino2>
+    <codigovecino>1234568</codigovecino>
+    <nombre>Jose Carlos</nombre>
+    <apellidos>Alonso</apellidos>
+    <portal>47</portal>
+    <piso>12</piso>
+    <letra>B</letra>
+    <ccc>C</ccc>
+    <cargo>Vice-Presidente</cargo>
+</vecino2>
+
+<vecino3>
+    <codigovecino>1234554</codigovecino>
+    <nombre>Juan Carlos</nombre>
+    <apellidos>Fernandez</apellidos>
+    <portal>1</portal>
+    <piso>12</piso>
+    <letra>C</letra>
+    <ccc>123456789D</ccc>
+    <cargo>Secretario</cargo>
+</vecino3>
+
+</Comunidad>

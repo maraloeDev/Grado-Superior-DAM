@@ -1,0 +1,20 @@
+body{
+    background-image: url(./plaza-mayor-Valladolid.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div img{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 60%;
+    display: block;
+}
+div h1{
+    position: absolute;
+    margin-left: 60%;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-top: 20%;
+    
+}

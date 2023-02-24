@@ -1,0 +1,34 @@
+p {
+  background-color: green;
+  color: bisque;
+  /*!important; 
+  Sirve para forzar ante todas las clases e id el color a establecer*/
+}
+/* el punto sirve para las CLASES
+        la almuhadilla sirve para los ID*/
+.azules {
+  color: blue;
+}
+
+
+.rojo {
+  color: red;
+}
+#principal.azules {
+  color: blue;
+  font-size: xx-large;
+}
+p.no{
+  color: green !important;
+  border :  dotted black;
+
+}
+/* segun la etiqueta a contenga el target blank*/
+a[target="_blank"]{ 
+  font-size: xx-large;
+}
+
+a[target="_self"]{
+  font-size: xx-small;
+}
+

@@ -1,0 +1,11 @@
+/* SEGUNDA FORMA*/
+
+h1.rojo{
+    background-color: red;
+}
+h1#amarillo{
+    background-color: yellow;
+}
+div p{
+    color: blue;
+}

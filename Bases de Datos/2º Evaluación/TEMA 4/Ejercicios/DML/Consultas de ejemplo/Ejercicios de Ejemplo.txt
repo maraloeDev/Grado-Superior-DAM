@@ -1,0 +1,36 @@
+-- 1 Mostrar  todos los datos de los empleados
+select * from scott.emp; 
+-- 2 Mostrar todos los fatos de todos los departamentos
+select * from scott.dept;
+-- 3 Mostrar las localidades en las que se encuentras los dept
+select dept.loc from scott.dept;
+-- 4 Mostrar el codigo, nombre, salario y comisiones ¡del empleado ordenado por salario
+select ename "Nombre", sal "Salario", comm "Comisiones" from scott.emp order by emp.sal desc, emp.comm;
+-- 5 Muestra los puestos que hay en la BD
+select distinct emp.job  from scott.emp;
+
+--NOTA MOSTRAR el codigo, el nombre, y el dato a solicitar
+
+-- 6 Muestra los empleados con salario superior a 1500
+select emp.empno "Codigo",emp. ename "Nombre",emp.sal "salario" from scott.emp where sal > 1500;
+-- 7 Muestralos empleados que trabajan en el departamento 10
+select emp.empno "Codigo",emp. ename "Nombre",emp.job "Trabajo", emp.deptno "Departamento" from scott.emp where deptno = 10;
+-- 8 Muestra los empleados que tienen comisiones
+select emp.empno "Codigo",emp. ename "Nombre",emp.comm "Comisiones" from scott.emp where comm is not null;
+-- 9 Muestra los empleados  admin
+select emp.empno "Codigo",emp. ename "Nombre",emp.job "Trabajo" from scott.emp where job like 'CLERK';
+-- 10 Muestra los empleados que son vendedores y tienen comisiones positivas
+select emp.empno "Codigo",emp. ename "Nombre",emp.job "Trabajo", emp.comm "Comisiones" from scott.emp where job like 'SALESMAN' and comm >=0;
+-- 11 Muestra los empleados que han sido contratados desde junio, julio y agosto
+select emp.empno "Codigo",emp. ename "Nombre",emp.job "Trabajo", emp.hiredate "dias" from scott.emp where emp.hiredate like '%JAN%';
+-- 12 Mostrar los empleados cuyo sueldo enta  entre 1500 y 2000
+select emp.empno "Codigo",emp. ename "Nombre",emp.sal "salario" from scott.emp where emp.sal > 1500 and emp.sal < 2000;
+-- 13 mostrar los empleados que trabajan en los departamento 10 y 40
+select emp.empno "Codigo",emp. ename "Nombre",emp.job "Trabajo", emp.deptno "Departamento" from scott.emp where deptno = 10 or deptno = 40;
+-- 14 Muestra para cada empleado su sueldo, su salario, sus comisiones y la suma de las comisiones y el salario
+
+-- Mostrar la suma de salarios de los empleados    de que son malager y trabaja en el departamento 10
+select sum(emp.sal)  "Suma de salarios" from scott.emp where emp.job like 'MANAGER';
+--Mostrar el numero total de empleados
+
+select count(*) from scott.emp;

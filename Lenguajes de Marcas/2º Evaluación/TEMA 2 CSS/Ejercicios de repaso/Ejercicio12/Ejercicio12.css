@@ -1,0 +1,52 @@
+div>p:nth-of-type(odd){
+    background-color: grey;
+    color: fuchsia;
+    font-weight: bold;
+}
+div>p:nth-of-type(even){
+    background-color: white;
+    color: fuchsia;
+    font-weight: bold;
+}
+
+ul{
+    list-style: none;
+}
+li{
+    position: fixed;
+}
+a{
+    text-decoration: underline red;
+    color: white;
+    
+
+}
+.inicio{
+    
+    margin-left: 90%;
+    border: solid black;
+    width: 5%;
+    text-align: center;
+    background-color: black;
+}
+.fin{
+    border: solid black;
+    width: 5%;
+    text-align: center;
+    background-color: black;
+}
+
+div{
+    text-align: center;
+    line-height: 400px;
+    width: 60%;
+    margin-left: 20%;
+    border: dashed;
+
+
+
+}
+p{
+    margin-top: 0%;
+    padding: 0%;
+}

@@ -1,0 +1,45 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="song">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element type="xs:string" name="title"/>
+        <xs:element name="composers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="composer">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nombre"/>
+                    <xs:element type="xs:string" name="apellido"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="producers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="producer">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nombre"/>
+                    <xs:element type="xs:string" name="apellidos"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="publisher"/>
+        <xs:element name="artists">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="artist"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

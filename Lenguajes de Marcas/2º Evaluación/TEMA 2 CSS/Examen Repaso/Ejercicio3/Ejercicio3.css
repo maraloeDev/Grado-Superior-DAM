@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#principal {
+  background: gray;
+  height: 70px;
+  position: fixed;
+  width: 100%;
+}
+
+h1 {
+  float: left;
+}
+
+ul {
+  float: right;
+}
+
+li {
+  float: left;
+  margin: 10px;
+  list-style: none;
+  line-height: 60px;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  /* Ponemos aquí el blanco porque a tiene estilo propio en el navegador */
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+article {
+  width: 200px;
+}
+
+section {
+  padding-top: 70px;
+}
+
+#imagen {
+  position: fixed;
+  top: 70px;
+  left: 200px;
+}

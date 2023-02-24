@@ -1,0 +1,4 @@
+ZOO(id_zoo(PK),nombre_zoo,ciudad_zoo,pais_zoo,tamaño_zoo,presupuesto_zoo;
+ESPECIE_ANIMIAL (nombre_cientifico(PK),nombre_vulgar,familia_animal,peligro_extincion
+ANIMAL (id_animal(PK),sexo_animal,continente_animal,pais_origen_animal,año_nacimiento_animal, id_zoo(FK,NOT NULL)), nombre_cientifico(FK, NOT NULL)
+

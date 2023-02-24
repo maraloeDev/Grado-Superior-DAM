@@ -1,0 +1,17 @@
+ol li{
+    font-weight: bold;
+}
+#textoverde{
+    color: green;
+    font-size: large;
+}
+h1,h2,h3{
+    background-color: red;
+}
+.blue{
+    color: yellow
+}
+
+a:hover{
+    color: red;
+}

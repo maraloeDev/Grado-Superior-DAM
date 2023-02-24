@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+}
+
+p.titulo{
+    text-align: center;
+}
+p.encabezado{
+    color: white;
+    text-align: left;
+    background-color: dodgerblue;
+    margin: 0;
+    font-family: sans-serif;
+
+}
+div.fondo{
+
+    background-color: rgba(0, 191, 255, 0.568);
+
+}
+
+p span{
+    color: black;
+}
+p.info{
+    text-align: left;
+}
+u.datospersonales{
+    color: red;
+}
+
+p.experienciaLaboral{
+    color: yellow;
+}
+#capacidadesAptitudes{
+    color: white;
+}
+#LenguaMaterna{
+    color: white;
+    background-color: rgba(0, 174, 255, 0.336);
+}

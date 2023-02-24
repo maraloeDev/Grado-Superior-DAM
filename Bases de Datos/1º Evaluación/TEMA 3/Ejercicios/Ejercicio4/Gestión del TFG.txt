@@ -1,0 +1,23 @@
+TFG (numero_orden(PK),tema_tfg,fecha_comienzo);
+
+TRIBUNAL (numero_tribunal(PK),numero_componentes, lugar_examen);
+
+ALUMNO (numero_matricula(PK),dni_alumno,nombre_alumno);
+
+GRUPO DE INVESTIGACION (Numero_grupo(PK),nombre_grupo,numero_componentes);
+
+PROFESOR (dni_profesor(PK),nombre_profesor,domicilio_profesor);
+
+RELACIONES
+
+REALIZA (numero_matricula + numero_orden(PK),tema_tfg,fecha_comienzo);
+
+EVALUA (numero_tribunal + numero_orden(PK),fecha_defensa);
+
+FORMADO (dni_profesor + numero_tribunal(PK),numero_componentes (FK), lugar_examen);
+
+AYUDA (dni_profesor + numero_matricula(PK, FK));
+
+DIRIGE (
+
+PERTENECE (numero_matricula + numero_grupo(PK),fecha_incorporacion;

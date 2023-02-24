@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Expires" content="0">
+    <title>Formularios</title>
+</head>
+
+<body>
+    <!--GET  SE VEN LOS DATOS EN LA URL
+        POST NO SE VEN LOS DATOS POR LA URL
+        name es como una variable en java, para poner nombre al input (VA EN TODOS LOS INPUT)-->
+    <form action="" method="get">
+
+        <fieldset>
+            <legend>Datos</legend>
+
+            Nombre: <input type="text" name="Nombre" id="" required>
+            <br>
+
+            Edad: <input type="number" name="Edad" id="" min="0" max="100" required>
+            <!-- min y max sirve para limitar los números-->
+            <br>
+
+            Contraseña: <input type="password" name="password" id="" required>
+            <br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Datos Laborales</legend>
+
+            Color: <input type="color" name="Color" id="color" required>
+            <br>
+
+            Nacimiento: <input type="date" name="Nacimiento" id="" required>
+            <br>
+
+            Entrada al trabajo <input type="datetime-local" name="dia" id="" required>
+            <br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Deportes practicados </legend>
+
+            <input type="checkbox" name="deportes" id="" required> Baloncesto
+            <br>
+            <input type="checkbox" name="deportes" id="" required> Futbol
+            <br>
+            <input type="checkbox" name="deportes" id="" required> Ping-pong
+            <br>
+            <br>
+
+            Sexo
+            <br>
+
+            <!--El campo value sirve para dar valor, se pone en la URL-->
+            Masculino <input type="radio" name="Sexo" id="" value="Masculino" checked required>
+            Femenino <input type="radio" name="Sexo" id="" value="Femenino" required>
+            <br>
+            <br>
+            Ciudad de Nacimiento
+            <select required name="ciudad" id="" multiple>
+                <option selected value="28000">Madrid</option>
+                <option value="0800">Barcelona</option>
+                <option value="47000">Valladolid</option>
+
+            </select>
+            <br>
+            Oculto:<input required type="hidden" name="oculto" value="prueba">
+
+            <br>
+            Sugerencias
+            <br>
+            <textarea name="Sugerencias" placeholder="Inserte las Sugerencias" id="" cols="100" rows="5"></textarea>
+            <br>
+            Email: <input type="email" name="" id="">
+            <br>
+            Telefono <input type="tel" name="" id="">
+            <br>
+            Archivo: <input type="file" name="" id="">
+
+        </fieldset>
+
+        <!-- sumbit envia el la informacion al script que se envie en el form, si no se pone nada te envia a la propia pagina web actual-->
+        <input type="submit" value="Mi primer boton">
+        <br>
+        <input type="reset" value="Borrar">
+
+    </form>
+
+</body>
+
+</html>

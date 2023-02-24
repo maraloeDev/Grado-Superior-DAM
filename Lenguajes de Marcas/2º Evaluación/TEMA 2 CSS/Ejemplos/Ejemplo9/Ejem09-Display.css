@@ -1,0 +1,32 @@
+ol{
+    background-color: violet;
+    text-align: right;
+    
+}
+li>a{
+    text-decoration: none;
+    display: block;
+    line-height: 70px;
+    text-align: center;
+    display: block;
+    
+}
+li{
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    text-align: right;
+
+    
+
+
+}
+#menu>li{
+    list-style: none;
+    text-align: right;
+   
+}
+li>a:hover{
+background-color: black;
+color: brown;
+}

@@ -1,0 +1,3 @@
+PINTOR (id_pintor(PK),
+
+MECENAS (nombre_mecenas(PK),pais_mecenas,ciudad_mecenas,fecha_nacimiento_mecenas,fecha_muerte_mecenas);

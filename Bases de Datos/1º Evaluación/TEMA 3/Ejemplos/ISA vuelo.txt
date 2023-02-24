@@ -1,0 +1,2 @@
+PERSONAL(codigo_personal(PK),nombre_personal,dni_personal(Unique),piloto(boolean),
+         horas_vuelo)

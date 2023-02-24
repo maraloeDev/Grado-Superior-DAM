@@ -1,0 +1,67 @@
+REM ************ TABLAS_CONJUNTOS
+
+REM ************ TABLA ALUMNOS, NUEVOS, ANTIGUOS ************
+
+DROP TABLE ALUMNOS cascade constraints; --alumnos actualmente matriculados en el centro
+DROP TABLE NUEVOS cascade constraints;  --alumnos que ha reservado plaza para el próximo curso
+DROP TABLE ANTIGUOS cascade constraints;  --antiguos alumnos del centro
+
+Create TABLE ALUMNOS
+(
+  NOMBRE VARCHAR2(20),
+  EDAD NUMBER(2),
+  LOCALIDAD VARCHAR2(15)
+) ;
+
+Create TABLE  NUEVOS
+(
+  NOMBRE  VARCHAR2(20),
+  EDAD NUMBER(2),
+  LOCALIDAD VARCHAR2(15)
+) ;
+
+Create TABLE ANTIGUOS
+(
+  NOMBRE  VARCHAR2(20),
+  EDAD NUMBER(2),
+  LOCALIDAD VARCHAR2(15)
+) ;
+
+
+INSERT INTO ALUMNOS VALUES('JUAN',18,'COSLADA');
+INSERT INTO ALUMNOS VALUES('PEDRO',19,'COSLADA');
+INSERT INTO ALUMNOS VALUES('ANA',17,'ALCALA');
+INSERT INTO ALUMNOS VALUES('LUISA',18,'TORREJON');
+INSERT INTO ALUMNOS VALUES('MARIA',20,'MADRID');
+INSERT INTO ALUMNOS VALUES('ERNESTO',21,'MADRID');
+INSERT INTO ALUMNOS VALUES('RAQUEL',19,'TOLEDO');
+
+INSERT INTO NUEVOS VALUES('JUAN',18,'COSLADA');
+INSERT INTO NUEVOS VALUES('MAITE',15,'ALCALA');
+INSERT INTO NUEVOS VALUES('SOFIA',14,'ALCALA');
+INSERT INTO NUEVOS VALUES('ANA',17,'ALCALA');
+INSERT INTO NUEVOS VALUES('ERNESTO',21,'MADRID');
+
+INSERT INTO ANTIGUOS VALUES('MARIA',20,'MADRID');
+INSERT INTO ANTIGUOS VALUES('ERNESTO',21,'MADRID');
+INSERT INTO ANTIGUOS VALUES('ANDRES',26,'LAS ROZAS');
+INSERT INTO ANTIGUOS VALUES('IRENE',24,'LAS ROZAS');
+
+COMMIT;
+
+REM ************ CONSULTAS ************
+
+REM 1. Mostrar los alumnos actualmente matriculados y los del próximo curso.
+
+REM 2. Mostrar los alumnos actualmente matriculados que ya estuvieron en el centro anteriormente.
+
+REM 3. Mostrar los alumnos actualemnte matriculados y que no son antiguos alumnos.
+
+REM 4. Mostrar los alumnos actualemnte matriculados en el centro que además han reservado plaza para el
+REM    próximo curso y que no son antiguos alumnos.
+
+REM 5. Mostrar los alumnos actualmente matriculados que no son antiguos alumnos y que no han reservado plaza.
+
+REM 6. Mostrar los alumnos actualmente matriculados en el centro y los antiguos alumnos.
+
+

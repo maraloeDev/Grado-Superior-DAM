@@ -1,0 +1,22 @@
+body,p {
+    background-color: black;
+}
+p{
+    color: yellow;
+    font-family: Arial, Helvetica, sans-serif, 12px;
+    text-align: justify;
+    margin: 1,27cm;
+
+}
+h1{
+    background-color: aqua;
+    color: orange;
+    font-family: Arial, Helvetica, sans-serif, 16px;
+    
+}
+h2{
+    color: white;
+}
+a{
+    float: right;
+}

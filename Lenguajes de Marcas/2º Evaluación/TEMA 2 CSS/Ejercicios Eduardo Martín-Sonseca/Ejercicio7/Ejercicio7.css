@@ -1,0 +1,16 @@
+p#titulo{
+    background-color:  rgba(128, 128, 128, 0.507);
+    text-align: center;
+    font-weight: bold;
+}
+legend{background-color: white;
+}
+fieldset{
+    background-color: rgba(128, 128, 128, 0.507);
+}
+u{
+    color: red;
+}
+.btn{
+    float: right;
+}

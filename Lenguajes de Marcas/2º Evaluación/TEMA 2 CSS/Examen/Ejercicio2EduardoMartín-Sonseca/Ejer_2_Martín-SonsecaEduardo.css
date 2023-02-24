@@ -1,0 +1,46 @@
+p:last-of-type, p:first-of-type{
+    background-color: aqua;
+    margin-top: 5%;
+}
+p:nth-child(odd) {
+    background-color: aqua;
+}
+
+ul li {
+    list-style: none;
+    padding: 0%;
+    top: 0%;
+    position: fixed;
+}
+
+li.siguiente {
+    text-align: right;
+    height: 10%;
+    width: 50%;
+    right: 0%;
+}
+
+li.anterior {
+    text-align: left;
+    height: 10%;
+    width: 50%;
+    left: 0%;
+}
+
+.siguiente {
+    margin-left: 46%;
+    background-color: gray;
+}
+
+.siguiente:hover {
+    margin-left: 50%;
+    background-color: yellow;
+}
+
+.anterior {
+    background-color: gray;
+}
+
+.anterior:hover {
+    background-color: yellow;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+
+<body>
+
+    <!--Crea un mapa que al pulsar sobre cada figura irá a un html
+llamado circulo.html, cuadrado.html, rectángulo.html o triangulo.html
+respectivamente. Debes tener en cuenta que los html de las figuras estarán en un
+carpeta llamada figuras y que el enlace debe llevar a la parte baja de éstos, hay
+unos 100 saltos de línea insertados por encima del destino del hipervínculo dentro
+de cada html.
+La siguiente imagen está en una carpeta llamada imagenes y el html
+principal donde está el mapa en una carpeta llamada principal.-->
+
+<img src="../imagenes/Imagen.png" alt="" usemap="#figuras">
+
+<map name="figuras">
+    <area shape="rect" coords="31,15,166,211" href="../Figuras/Cuadrado.html#finCuadrado" alt="Cuadrado">
+    <area shape="poly" coords="201,18,351,15,356,157" href="../Figuras/Triangulo.html#finTriangulo" alt="Triangulo">
+    <area shape="rect" coords="20,352,375,451" href="../Figuras/Rectangulo.html#finRectangulo" alt="Rectangulo">
+    <area shape="circle" coords="165,224,219" href="../Figuras/Circulo.html#finCirculo" alt="Circulo">
+</map>
+
+</body>
+
+</html>

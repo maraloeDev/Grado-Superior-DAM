@@ -1,0 +1,50 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Comunidad">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="vecino1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="codigovecino"/>
+              <xs:element type="xs:string" name="nombre"/>
+              <xs:element type="xs:string" name="apellidos"/>
+              <xs:element type="xs:byte" name="portal"/>
+              <xs:element type="xs:byte" name="piso"/>
+              <xs:element type="xs:string" name="letra"/>
+              <xs:element type="xs:string" name="ccc"/>
+              <xs:element type="xs:string" name="cargo"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vecino2">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="codigovecino"/>
+              <xs:element type="xs:string" name="nombre"/>
+              <xs:element type="xs:string" name="apellidos"/>
+              <xs:element type="xs:byte" name="portal"/>
+              <xs:element type="xs:byte" name="piso"/>
+              <xs:element type="xs:string" name="letra"/>
+              <xs:element type="xs:string" name="ccc"/>
+              <xs:element type="xs:string" name="cargo"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vecino3">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:int" name="codigovecino"/>
+              <xs:element type="xs:string" name="nombre"/>
+              <xs:element type="xs:string" name="apellidos"/>
+              <xs:element type="xs:byte" name="portal"/>
+              <xs:element type="xs:byte" name="piso"/>
+              <xs:element type="xs:string" name="letra"/>
+              <xs:element type="xs:float" name="ccc"/>
+              <xs:element type="xs:string" name="cargo"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persona>
+
+    <nombre> Jhon Smith</nombre>
+    <nacimiento dia = "21" mes= "Enero" anio="1969">
+
+    </nacimiento>
+    <direccion>
+        <calle> Avnda de la Universidad, 30</calle>
+        <poblacion>Leganes</poblacion>
+        <provincia>Madrid</provincia>
+        <codigopostal>28911</codigopostal>
+    </direccion>
+</persona>

@@ -1,0 +1,45 @@
+/*p:not()  NOT sirve para negar algo {
+}
+*/
+p:hover{ /* Cuando pases el raton por encima*/
+    background-color: red;
+    font-size: large;
+}
+
+tr:last-of-type{ /* El ultimo tipo de la fila*/
+    background-color: blue;
+}
+td:nth-of-type(2){ /*Se marca una posicion concreta*/
+    background-color: brown;
+}
+
+td:nth-child(odd){ /* Para los impares */
+    background-color: green
+}
+td:nth-child(even){ /* Para los pares */
+    background-color: red;
+}
+input:focus{
+    background-color: red; 
+    color: white;
+}
+input:hover{
+    background-color: red;
+    color: white;
+}
+input:first-child{
+    background-color: yellow;
+}
+a:visited{
+    color: green;
+}
+a:link{
+    color: black;
+}
+a:active{
+    background-color: red;
+}
+
+p:not(pequeño){
+    font-size: xx-large;
+}

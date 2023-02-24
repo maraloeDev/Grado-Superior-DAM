@@ -1,0 +1,30 @@
+A (CodA(PK));
+
+D (CodD + CodA(PK)); -- Me lo he tomando como una entidad debil de existencia
+
+--D (CodD (PK),CodA(FK) Seria como entidad debil en identificacion
+
+B (CodB(PK);
+
+C (CodC)(PK);
+
+G (CodG(PK));
+
+E(CodE(PK),atributo3,atributo6); --En el atribito 6 se puede podria añadir un atributo discriminante
+
+F(CodF(PK));
+
+
+RELACIONES
+
+AB (CodA + CodB(PK), atributo2);
+
+BC (CodC + CodB(PK),atributo4);
+
+CC (CodC_rol1  CodC_rol2 (PK), atributo1);
+
+BEG ( CodB + CodG + codE(PK),atibuto3,atributo5);
+
+ISA ( CodE(PK),atributo3,atributo6);
+
+E2F (CodF + CodE2(PK);

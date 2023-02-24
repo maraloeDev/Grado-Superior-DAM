@@ -1,0 +1,15 @@
+select * from scott.emp;
+
+-- Mostrar los datos de los empleados que tienen el mismo puesto del empleado scott
+select *
+from scott.emp
+where emp.job = (select emp.job 
+       	     from scott.emp
+                 where emp.ename like 'SCOTT');
+
+-- Mostrar los datos de los empleados cuyo puesto sea alguno de los disponibles en el depatamento 20
+select *
+from scott.emp
+where emp.deptno in (select emp.deptno
+                     from scott.emp
+                      where emp.deptno = 20);

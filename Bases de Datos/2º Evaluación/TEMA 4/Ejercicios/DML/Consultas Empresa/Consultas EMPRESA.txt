@@ -1,0 +1,381 @@
+select * from clientes;
+select * from oficinas;
+select * from pedidos;
+select * from productos;
+select * from repventas;
+
+-- 1  Listar la ciudad, región y ventas de cada oficina
+select ciudad, region, ventas 
+from oficinas;
+
+-- 2 Listar los nombres, oficinas y fechas de contrato de todos los vendedores.
+select nombre "Nombres", oficina_rep "Oficinas",contrato "Fechas de contrato" 
+from repventas;
+
+-- 3 Listar la ciudad, la región y el importe por encima o por debajo del objetivo para cada oficina de ventas.
+select ciudad, region, (objetivo + ventas) "por encima", (objetivo - ventas) "por debajo"
+from  oficinas;
+
+-- 4 Mostrar el valor del inventario para cada producto.
+select id_producto, descripcion, (existencias + precio) "Valor"
+ from productos;
+
+-- 5 Mostrar las nuevas cuotas si se eleva la cuota de cada vendedor en un 3% de sus ventas anuales.
+select nombre,cuota, ventas "Ventas anuales" 
+from repventas 
+where repventas.cuota > 0.03
+order by ventas;
+
+-- 6 Listar las ventas para cada ciudad.
+select all repventas.ventas,  oficinas.ciudad
+from repventas, oficinas
+order by ciudad;
+
+-- 7 Mostrar los números de empleado de los directores de oficinas de ventas.
+select repventas.num_empl "Numero de empleado", oficinas.dir, repventas.titulo
+from repventas, oficinas;
+
+-- 8 ¿Cuál es el nombre, cuota y ventas del empleado número 107?
+select num_empl,nombre, cuota,ventas
+from repventas 
+where num_empl = 107;
+
+-- 9 Listar las oficinas cuyas ventas son superiores a 50.000 € por encima del objetivo.
+select oficinas.ventas, oficinas.objetivo 
+from oficinas 
+where ventas > 50.000 and ventas > objetivo;
+
+-- 10 Listar las oficinas cuyas ventas están por debajo del 80% del objetivo.
+select oficina, ventas
+from oficinas 
+where ventas < 0.08 * objetivo;
+
+-- 11 Listar los vendedores cuyas ventas no están entre el 80 y el 120% de su cuota
+select nombre, ventas, cuota
+from repventas 
+where ventas not between 0.08 and 1.20;
+
+-- 12 Listar el nombre y fecha de contrato de cualquier vendedor cuyas ventas estén entre 100.000 y 300.000 €.
+select nombre, contrato " Fecha de contrato", ventas
+from repventas 
+where ventas 
+between 100000 and 300000;
+
+-- 13 Mostrar las oficinas no dirigidas por el empleado número 108.
+select num_empl, nombre, oficina_rep 
+from repventas 
+where num_empl != 108;
+
+-- 14 Listar los vendedores que trabajan en New York, Atlanta o Denver.
+select distinct repventas.num_empl, repventas.nombre, oficinas.ciudad 
+from repventas, oficinas 
+where oficinas.ciudad like 'New York' or oficinas.ciudad = 'Atlanta'or oficinas.ciudad = 'Denver' order by ciudad; 
+
+-- 15 Mostrar todos los pedidos realizados en enero de 2020.
+select fecha_pedido from pedidos 
+where pedidos.fecha_pedido 
+like '%JAN-20';
+
+-- 16 Mostrar los vendedores cuyo apellido empieza por A
+select nombre 
+from repventas 
+where nombre like '%A%';
+
+-- 17 Listar los vendedores que venden por debajo de la cuota o con ventas inferiores a 300.000
+select nombre, cuota, ventas 
+from repventas 
+where (ventas < cuota) or (ventas < 300000);
+
+-- 18 Listar los vendedores que venden por debajo de la cuota y con ventas no inferiores a 150.000
+select nombre, cuota, ventas 
+from repventas 
+where (ventas < cuota) and (ventas >= 150000);
+
+-- 19 Hallar todos los vendedores que trabajan en Denver, New York o Chicago; o no tienen director y
+--    fueron contratados a partir de junio de 2008; o están por encima de la cuota pero tienen ventas
+--    de 600.000 o menos.
+select distinct repventas.nombre "venderor/a" from repventas, oficinas where oficinas.ciudad like 'Denver' 
+or oficinas.ciudad like 'New York' or oficinas.ciudad like 'Chicago' or repventas.director is null 
+and repventas.contrato between '30-MAY-08' and '01-JUL-08' or repventas.ventas > repventas.cuota 
+and repventas.ventas >= 600000;
+
+-- 20 Listar los pedidos que no son de los vendedores 101, 103, 107 y 109.
+select distinct pedidos.rep, repventas.num_empl 
+from  pedidos, repventas 
+where pedidos.rep != 101
+and pedidos.rep != 103 
+and pedidos.rep != 107 
+and pedidos.rep != 109;
+
+-- 21 Mostrar los productos cuyo fabricante no empieza por l
+select productos.id_producto "Producto", pedidos.fab 
+from  pedidos, productos 
+where fab not like 'l%';
+
+-- 22 Mostrar los vendedores que se apellidan Smith.
+select nombre 
+from repventas 
+where nombre like '%Smith';
+
+-- 23 Mostrar los vendedores que aún no tienen asignada una oficina.
+select oficina_rep, nombre 
+from repventas 
+where oficina_rep is null;
+
+-- 24 Mostrar los vendedores a los que se ha asignado ya una oficina.
+select oficina_rep, nombre 
+from repventas 
+where oficina_rep is not null;
+
+-- 25 ¿Cuáles son las ventas promedio de los vendedores?
+select avg(ventas) "Ventas promedio" 
+from repventas;
+
+-- 26 Hallar el importe medio y el importe total de los pedidos, el límite de crédito máximo concedido
+--    a clientes, la cuota media de ventas asignada a los vendedores y su desviación estándar.
+select avg(pedidos.importe) " importe medio", sum(pedidos.importe) "Importe total", max(repventas.ventas) "Credito maximo", avg(repventas.cuota) "Cuota media",stddev (repventas.cuota) "Desviación tipica"  
+from pedidos, repventas;
+
+-- 27 ¿Cuál es la cuota promedio y las ventas promedio de los vendedores?
+select avg(repventas.cuota) " Cuota promedio", avg(repventas.ventas) "Ventas promedio" 
+from repventas;
+
+-- 28 ¿Cuál es el rendimiento de cuota promedio de los vendedores? (Ventas*100/Cuota)
+select avg(repventas.ventas* 100 / repventas.cuota) "Cuota promedio de los vendedores" 
+from repventas;
+
+-- 29 ¿Cuál es el mejor rendimiento de ventas de todos los vendedores?
+select max(ventas) 
+from repventas;
+
+-- 30 ¿Cuáles son las cuotas asignadas mínima y máxima?
+select min(cuota) "Cuota minima", max(cuota) "Cuota maxima" 
+from repventas;
+
+-- 31 ¿Cuál es el total de pedidos aceptados por Bill Adams?
+select count(pedidos.num_pedido) 
+from pedidos 
+where pedidos.rep = 105;
+
+-- 32 ¿Cuántos vendedores superan su cuota?
+select count (num_empl) 
+from repventas 
+where (ventas > cuota);
+
+-- 33 ¿Cuántos pedidos tienen un importe superior a 25.000?
+select count(pedidos.importe) 
+from pedidos 
+where importe > 25000;
+
+-- 34 Cuál es la fecha de pedido más antigua en la base de datos?
+select min(fecha_pedido) 
+from pedidos;
+
+-- 36 Muestra la titulación de los vendedores en una columna alineando el resultado a la derecha, y en mayúsculas.
+select titulo, upper(titulo) "Mayusculas"
+from repventas;
+
+-- 37 Muestra el nombre y el apellido de los vendedores en dos columnas independientes
+select substr(nombre, 1,instr(nombre, ' ')) "Nombre", ltrim (substr(nombre,instr(nombre,' ')))"Apellidos" 
+from repventas;
+
+-- 38 Muestra el nombre completo de los vendedores en una columna y en otra diferente sólo el nombre.
+select substr(nombre, 1,instr(nombre, ' ')) "Nombre" 
+from repventas;
+
+-- 39 Muestra el nombre completo de los vendedores en una columna y en otra diferente sólo el apellido.
+select substr(nombre, 1,instr(nombre, ' ')) "Apellidos" 
+from repventas;
+
+-- 40  Muestra los nombres de los vendedores ordenados por su número de caracteres.
+select nombre 
+from repventas 
+order by length(nombre) 
+desc; 
+
+-- 41 Muestra el nombre de los vendedores, su fecha de contratación y ésta formateada de la siguiente
+--    forma:
+--    “Contratado el XX de XXXX de XXXX"
+select nombre, to_char(contrato, '"Contratado el  "dd" de "mon" de  "yyyy""') "Contrato"
+from repventas;
+
+-- 42 Muestra los productos “bisagra” ordenados de mayor a menor precio.
+select descripcion, precio 
+from productos 
+where descripcion 
+like '%Bisagra%' 
+order by precio 
+desc;
+
+-- 43 . Convierte la cadena '010223' a fecha y visualiza su nombre de mes en mayúsculas
+select to_char(to_date('010221','ddmmyyy'), 'MONTH') 
+from dual;
+
+--44  Muestra los vendedores que lleven más de 30 años trabajando.
+select num_empl, nombre, contrato, to_char (contrato, 'yyyy') 
+from repventas 
+where to_char(contrato, 'yyyy') < to_char(sysdate, 'yyyy') -30;
+
+--45 Muestre los vendedores de la oficina de Chicago que lleven más de 10 años trabajando y tienen un director a su cargo.
+select unique repventas.nombre "nombre", ((to_char(sysdate, 'yyyy')) - (to_char(repventas.contrato,'yyyy')))  "Años trabajado"
+from repventas, oficinas
+where to_char(repventas.contrato,'yyyy') < (to_char(sysdate, 'yyyy') -10)
+and repventas.director is not null
+and repventas.oficina_rep = (select oficinas.oficina from oficinas 
+where oficinas.ciudad like '%Chicago%');
+
+-- Extra Mostrar los vendedores que tienen apellidos que empiezan por consonante
+select repventas.nombre "Apellidos" 
+from repventas
+where 
+substr(nombre,instr(nombre, ' ')+1) not like'A%'and
+substr(nombre,instr(nombre, ' ')+1) not like 'E%'and
+substr(nombre,instr(nombre, ' ')+1) not like 'I%'and
+substr(nombre,instr(nombre, ' ')+1) not like 'O%'and
+substr(nombre,instr(nombre, ' ')+1) not like 'U%';
+
+-- 46 Listar los identificadores de fabricante y de producto para los productos con precio superior a 2.000 o con pedido de importe superior a 30.000. Obtener también este listado sin productos
+--    duplicados.
+select distinct productos.id_fab, productos.id_producto, productos.precio, pedidos.importe
+from productos, pedidos
+where productos.id_producto = pedidos.producto and (productos.precio > 2000) or (pedidos.importe > 30000);
+
+-- 47 Ordenar el resultado del apartado anterior por fabricante y número de producto
+select distinct productos.id_fab, productos.id_producto, productos.precio, pedidos.importe
+from productos, pedidos
+where productos.id_producto = pedidos.producto and (productos.precio > 2000 or pedidos.importe > 30000)
+order by productos.id_fab, productos.id_producto;
+
+-- 48 Listar las oficinas con ciudad, nombre y título de sus directores, que presenten un objetivo de
+--    ventas superior a 600.000
+select distinct oficinas.dir, repventas.num_empl,oficinas.ciudad "ciudad",
+repventas.nombre "Nombre del vendedor",repventas.titulo "Titulo",oficinas.objetivo
+from oficinas, repventas
+where oficinas.dir = repventas.num_empl and (oficinas.objetivo + oficinas.ventas) > 6000000;
+
+-- 49 Listar todos los pedidos con importe superior a 25.000 incluyendo el nombre del vendedor que
+--    tomó el pedido y el nombre del cliente que lo solicitó.
+select distinct pedidos.clie, clientes.num_clie,pedidos.importe, repventas.nombre, clientes.empresa "Nombre del cliente"
+from pedidos, repventas, clientes
+where pedidos.clie = clientes.num_clie and (pedidos.importe > 25000);
+
+-- 50 Listar todos los pedidos con importe superior a 25.000 incluyendo el nombre del cliente que lo
+--    ordenó, el vendedor asociado a ese cliente y la ciudad donde está la oficina en la que el vendedor
+--    trabaja.
+select distinct oficinas.ciudad,pedidos.clie, clientes.num_clie,pedidos.importe, clientes.empresa "Nombre del cliente"
+from pedidos, repventas, clientes, oficinas
+where pedidos.clie = clientes.num_clie and (pedidos.importe > 25000);
+
+select unique oficinas.ciudad,pedidos.clie, clientes.num_clie,pedidos.importe, clientes.empresa "Nombre del cliente", repventas.num_empl, oficinas.dir
+from pedidos, repventas, clientes, oficinas
+where repventas.num_empl = oficinas.dir
+and clientes.rep_clie = repventas.num_empl
+and (pedidos.importe > 25000);
+
+-- 51 Cuantos vendedores estan asignados en cada oficina
+select repventas.num_empl,repventas.oficina_rep, oficinas.oficina, oficinas.dir
+from repventas, oficinas
+where repventas.num_empl = oficinas.dir;
+
+-- 52 Cuantos clientes  son atendidos pr cada vendedor
+select clientes.num_clie, repventas.num_empl, clientes.empresa
+from repventas, clientes
+where repventas.num_empl = clientes.num_clie
+group by clientes.empresa,clientes.num_clie, repventas.num_empl;
+
+
+-- 53 Total de padidos por fabricante
+select distinct pedidos.fab, max(pedidos.importe)
+from pedidos
+where pedidos.fab like '%ACI%';
+
+-- 54 Numero de pedidos realizados por cliente
+select clientes.empresa, count(*)
+from clientes, pedidos
+where clientes.num_clie=pedidos.clie
+group by clientes.num_clie, clientes.empresa
+order by 1;
+
+-- 55 Para cada oficina con mas de 2  vendedores, mostrar las ventas totales y la cuota total de sus vendedores
+select count(repventas.ventas),sum( repventas.ventas) "ventas totales", sum (repventas.cuota)"Cuotas totales", oficinas.dir
+from repventas, oficinas
+where repventas.oficina_rep=oficinas.oficina
+group by repventas.num_empl,oficinas.dir
+having count(*)>2;
+
+-- 56 Mostrar el numero de clientes asignados a la cartera de cada vendedor pero solo aquellos que tienen un limite de cledito inferior a 5000
+select count(clientes.num_clie) "clientes", repventas.nombre "vendedor" 
+from clientes, repventas
+where repventas.num_empl = clientes.rep_clie
+having clientes.limite_credito < 5000
+group by repventas.num_empl, repventas.nombre;
+
+-- 57a Mostrar las oficinas cuyo objetivo de ventas supera la suma de las cuotas de todos los vendedores
+select oficinas.oficina
+from oficinas 
+where oficinas.objetivo > (select count(repventas.cuota) from repventas );
+
+-- 57b 
+
+-- 58 Mostrar los productos del fabricante ACI cuyas existencias superan a las existencias del producto 41004
+select id_fab
+from productos
+where productos.id_fab like 'ACI' and productos.existencias > 
+(select productos.existencias from productos where productos.existencias like '%277%');
+
+-- 59 Mostrar los pedidos realizados en el mismo mes que los pedidos realizados por el cliente 'ACME Mfg'
+select pedidos.num_pedido
+from pedidos
+where TO_CHAR (pedidos.fecha_pedido, 'mon') in (select TO_CHAR (pedidos.fecha_pedido, 'mon') from clientes where clientes.num_clie = pedidos.clie and  clientes.empresa like '%Acme Mfg.%');
+
+-- 60 Mostrar los vendedores cuyo director es alguno de los directores de oficina
+select repventas.nombre from repventas where repventas.director
+in (select oficinas.dir from oficinas);
+
+--61 Mostrar los vendedores cuyo director es alguno de los directores de oficinas
+select *
+from repventas
+where repventas.num_empl in (select  dir
+                             from oficinas
+                            where repventas.num_empl = oficinas.dir);
+
+-- 62 Mostrar los clientes del vendedor Sue Smith que no han hecho ningún pedido superior a 3.000 €.
+select *
+from repventas
+where repventas.nombre like 'Sue Smith' not exists (select importe from pedidos where repventas.empl = pedidos.rep and  importe > 3000);
+
+--Noel
+select clientes.empresa, repventas.nombre
+from clientes, repventas
+where clientes.rep_clie = repventas.num_empl
+and repventas.nombre like '%Sue Smith%'
+and clientes.num_clie in (select pedidos.clie from pedidos where pedidos.importe > 3000);
+
+-- 63 Mostrar los vendedores que han tomado algún pedido que represente más del 10% de su cuota.
+select *
+from repventas
+where repventas.cuota in (select cuota
+                        from repventas
+                        where repventas.cuota > 0.10);
+--Noel
+select repventas.nombre, repventas.cuota, pedidos.importe
+from repventas,pedidos
+where repventas.num_empl = pedidos.rep
+and pedidos.importe > repventas.cuota * 0.10;
+
+
+
+-- 64 Mostrar los vendedores con promedio de pedidos de productos fabricados por ACI, superior al pedido medio global de la empresa.
+select *
+from pedidos, repventas
+where pedidos.importe > (select pedidos.fab
+                              from pedidos
+                              where pedidos.fab like'ACI'
+                              group by repventas.nombre, pedidos.fab, pedidos.importe);
+
+-- 65 Mostrar los vendedores que no dirigen ninguna oficina.
+select repventas.nombre,oficina_rep
+from repventas
+where  exists (select oficina_rep
+                   from repventas
+                   where oficina_rep is null);

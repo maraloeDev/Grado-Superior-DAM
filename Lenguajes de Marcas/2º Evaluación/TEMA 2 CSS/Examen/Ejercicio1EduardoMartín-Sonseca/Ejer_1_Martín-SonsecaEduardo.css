@@ -1,0 +1,20 @@
+table{
+    width: 50%;
+    margin-left: 40%;
+    background-image: url(https://gregoriofer.com/logo.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-left: 0%
+}
+hr{
+    margin-left: 0%;
+    margin-right: 50%;
+}
+.rojo{
+    background-color: red;
+    opacity: 50%;
+}
+.azul{
+    background-color: aqua;
+    opacity: 50%;
+}

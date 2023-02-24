@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<song>  length="6.20
+        anio="1978"
+
+<title> Hot cop</title>
+<composers> 
+    <composer>
+        <nombre> Henry</nombre>
+        <apellido> Beolo</apellido>
+    </composer>
+</composers>
+
+<producers>
+    <producer> 
+        <nombre> Jackes </nombre>
+        <apellidos> Morali</apellidos>
+    </producer>
+</producers>
+<publisher> Poly gram</publisher>
+<artists>
+    <artist> Village people</artist>
+</artists>
+</song>

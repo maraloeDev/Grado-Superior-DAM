@@ -1,0 +1,3 @@
+En las relaciones N : M se crea una tabla para la relacion en el que se incluye los 2 indentificadores + el atributo de la relacion)
+En las relaciones 1 : N se pasa la clave al lado N
+En las relaciones 1 : 1 se pasa la clave de cualquer entidad

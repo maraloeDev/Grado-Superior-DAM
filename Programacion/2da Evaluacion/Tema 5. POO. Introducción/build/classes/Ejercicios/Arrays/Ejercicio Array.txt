@@ -1,0 +1,14 @@
+A partir de un array de int de tamaño 10 que sera rellenado con aleatorios entre 1 y 10
+
+Realiza un metodo que calcule la media aritmetica de los numeros del array que se encuentren entre 2 posiciones
+pasadas como parametro
+
+Controlar mediante EXCEPCIONES
+
+[3,5,1,10,4,7,3,10,2,2]
+
+posiciones (3,4)
+Media = 7
+
+Posiciones (9,12)
+Error Indices fuera de alcance

@@ -1,0 +1,21 @@
+p:nth-child(odd){
+
+    background-color: grey;
+}
+p:first-of-type, p:last-of-type{
+    text-transform: uppercase;
+    color: green;
+
+}
+p{
+    background-image: url("https://gregoriofer.com/logo.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px;
+}
+
+img:hover{
+
+    visibility: hidden;
+
+}

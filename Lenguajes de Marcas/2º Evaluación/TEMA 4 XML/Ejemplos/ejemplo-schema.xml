@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="documento" type="documentoType"/>
+
+  <xs:complexType name="documentoType">
+    <xs:sequence>
+      <xs:element name="título" type="xs:string"/>
+      <xs:element name="ciclo" type="xs:string"/>
+      <xs:element name="fecha" type="fechaType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="fechaType">
+    <xs:sequence>
+      <xs:element name="día" type="xs:integer"/>
+      <xs:element name="mes" type="xs:string"/>
+      <xs:element name="año" type="xs:integer"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

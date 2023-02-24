@@ -1,0 +1,30 @@
+div{
+    position: fixed;
+    background-color: black;
+    color: white;
+    padding: 0%;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 10%;
+    line-height: 100px;
+}
+li:hover{
+    background-color: green;
+    color: white;
+    list-style: none;
+}
+
+ul{
+    list-style: none;
+}
+p{
+    margin-left: 10%;
+}
+
+a{
+    text-decoration: white none;
+}
+a:hover{
+    color: white;
+}

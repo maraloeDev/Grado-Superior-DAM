@@ -1,0 +1,12 @@
+div{
+    background-color: antiquewhite;
+}
+
+div p:last-of-type{
+    color: red;
+    background-image: url("https://gregoriofer.com/logo.jpg");
+    background-repeat: no-repeat; /*  Para que no se repita la imagen*/
+    background-position: center; /*  Coloca la imagen en el centro*/
+    background-size: cover; /* La img se estira en todo el componente */
+    
+}

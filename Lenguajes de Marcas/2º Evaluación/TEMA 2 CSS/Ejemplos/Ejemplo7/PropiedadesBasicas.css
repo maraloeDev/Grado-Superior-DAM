@@ -1,0 +1,21 @@
+p:first-of-type{
+    color: red;
+    letter-spacing: 5px;
+    text-align: left;
+    text-decoration: line-through; /* Para tachar */
+    text-decoration: underline; /* Para subrayar */
+    text-indent: 10%; /* Sangria  */
+    text-transform: capitalize;
+    line-height: 20px !important; /* Altura de la linea */
+    
+}
+
+p:last-of-type{
+    font-style:italic ; /*  Estilo del parrafo*/
+    font-size: medium; /* Tamaño de la letra */
+    font-weight: bold; /* Poner en negrita */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /*  Sirve para cambiar el estilo de la letra*/
+    font-variant: small-caps;
+}
+
+

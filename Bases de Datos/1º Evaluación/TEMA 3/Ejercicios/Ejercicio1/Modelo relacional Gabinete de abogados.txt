@@ -1,0 +1,7 @@
+PROCURADOR (dni_procurador(PK),nombre,apellidos,direccion);
+
+ASUNTO(numero_expediente(PK) fecha_inicio,fecha_finalizacion,estado);
+
+CLIENTE(dni_cliente(PK),nombre_cliente,apellido_cliente,dirección_cliente);
+
+LLEVA(dni_procurador + numero_expediente(PK,FK));

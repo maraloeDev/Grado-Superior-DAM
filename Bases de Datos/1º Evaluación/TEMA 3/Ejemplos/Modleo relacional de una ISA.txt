@@ -1,0 +1,9 @@
+PERSONAL(id_personal(PK),nombre);
+
+PROFESORES (id_personal(PK,FK),departamentos, trienios;
+
+BEDELES ((id_personal(PK,FK),categoria;
+
+TECNICOS (id_personal(PK,FK),meses;
+------------------------------------------------------------------
+PERSONAL(id_personal(PK),nombre, tipo, meses);

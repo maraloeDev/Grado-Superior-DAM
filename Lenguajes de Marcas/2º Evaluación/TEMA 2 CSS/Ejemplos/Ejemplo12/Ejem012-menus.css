@@ -1,0 +1,44 @@
+ul{
+    margin-top: 0px;
+    position: fixed;
+    background-color: brown;
+    top: 0%;
+    left: 0px;
+    width: 10%;
+    height: 100%;
+    padding-left: 0;
+
+}
+.imagen{
+ 
+    margin-top: 230%;
+    background-image: url("https://gregoriofer.com/wp-content/uploads/2015/11/logo.jpg");
+    background-repeat: no-repeat;
+}
+
+.imagen{
+    background-color: white;
+    width: 20px;
+}
+.imagen:hover{
+    background-color: white;
+    height: 11%;
+    width: 11%;
+}
+ul>li>a{
+    height: 70px;
+    display: block;
+    
+}
+ul li.nor:hover{
+    list-style: none;
+    background-color: darkgoldenrod;
+}
+p{
+    margin-left: 11%;
+    padding: 0%;
+}
+img{
+    display: list-item;
+    align-items: center;
+}

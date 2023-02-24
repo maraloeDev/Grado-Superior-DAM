@@ -1,0 +1,37 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="personas">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string"></xs:element>
+            <xs:element name="Apellidos" type="xs:string"></xs:element>
+            <xs:element type="xs:anySimpleType" name="dni"></xs:element>
+            <xs:element  name="fecha">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:date">
+                            <xs:attribute name="dia" type="xs:date" ></xs:attribute>
+                            <xs:attribute name="mes" type="xs:date" ></xs:attribute>
+                            <xs:attribute name="anii" type="xs:date" ></xs:attribute>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="direccion">
+            <xs:complexType>
+                <xs:sequence>
+                    <xs:element type="xs:string" name="calle"> </xs:element>
+                    <xs:element type="xs:string" name="numero"> </xs:element>
+                    <xs:element type="xs:string" name="poblacion"> </xs:element>
+                    <xs:element type="xs:string" name="cp"> </xs:element>
+                    <xs:element type="xs:string" name="cp"> </xs:element>
+                    <xs:element type="xs:string" name="pais"> </xs:element>
+                    <xs:element type="xs:string" name="telefono"> </xs:element>
+                    <xs:element type="xs:string" name="email"> </xs:element>
+                </xs:sequence>
+            </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:element>
+</xs:schema>

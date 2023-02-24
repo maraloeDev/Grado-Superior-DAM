@@ -1,0 +1,15 @@
+ul{
+    list-style: none;
+    width: 200px;
+    border: solid;
+    background-color: gray;
+    font-size: xx-large;
+}
+li:hover{
+    list-style-image: url(./flecha.png);
+   font-size: xx-large;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,35 @@
+h1{
+    margin-left: 10%;
+    padding-left: 10%;
+}
+
+/* El asterisco sirve para referenciar a todas las etiquetas */
+
+/*body{
+    margin-left: 0px;
+    padding-left: 0px;
+}*/
+
+
+
+div span{
+
+    background-color: red;
+
+}
+
+div + p { /* Es el que va despues del div */
+    color: violet;
+}
+td{
+    background-color: yellow;
+}
+td + td{
+    background-color: red;
+}
+td+td{
+    background-color: yellow;
+}
+td+td+td+td{
+    background-color: red;
+}

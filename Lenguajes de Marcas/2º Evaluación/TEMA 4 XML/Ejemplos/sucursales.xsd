@@ -1,0 +1,31 @@
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="sucursales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="sucursal" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="director"/>
+              <xs:element type="xs:string" name="poblacion"/>
+              <xs:element name="cuenta" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="nombre"/>
+                    <xs:element type="xs:int" name="numero"/>
+                    <xs:element type="xs:short" name="saldohaber" minOccurs="0"/>
+                    <xs:element type="xs:short" name="saldodebe" minOccurs="0"/>
+                    <xs:element type="xs:short" name="aportacion" minOccurs="0"/>
+                  </xs:sequence>
+                  <xs:attribute type="xs:string" name="tipo" use="optional"/>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:int" name="telefono" use="optional"/>
+            <xs:attribute type="xs:string" name="codigo" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

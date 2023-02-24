@@ -1,0 +1,26 @@
+body{
+    background-color: gray;
+}
+h1{
+    text-align: center;
+}
+ul{
+    list-style: none;
+    margin-top: 10%;
+    line-height: 40px;
+    padding: 0%;
+    position: fixed;
+    
+}
+a{
+    text-decoration: none;
+    color: blue;
+}
+
+span{
+    display: block;
+    margin-left: 10%;
+    margin-top: 10%;
+    background-color: white;
+    border-left: black dashed;
+}

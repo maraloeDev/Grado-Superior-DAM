@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cd> titulo
+     <fecha>
+        dia
+        mes
+        anio
+    </fecha>
+    <canciones>
+        <cancion duracion="4:47" anio="2008">
+
+        </cancion>
+
+        <titulo> Give it 2 me</titulo>
+        <compositores>
+            <compositor>
+                <nombre>Pharrell</nombre>
+                <apellidos>Williams</apellidos>
+
+            </compositor>
+        </compositores>
+        <productores>
+            <productor>
+                <nombre>Pharrell</nombre>
+                <apellidos>Williams</apellidos>
+            </productor>
+        </productores>
+        <sello>Warner Bros.Records</sello>
+        <artista>Madonna</artista>
+    </canciones>
+
+</cd>
