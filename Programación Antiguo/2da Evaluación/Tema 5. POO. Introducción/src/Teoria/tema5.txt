@@ -1,0 +1,54 @@
+métodos: toUppercase, charAt, duration between.
+devuelve: toUppercase devuelve la cadena convertida a máyusculas
+si no devuelve:  void por ejemplo setLenient
+todo lo que viene entre corchetes {} es opcional
+la visibilidad es publica, privada o protegida.(Si no se pone nada por defecto es publico)
+El static es obligatorio solo en el main, en el resto es opcional.
+El tipo de retorno hay que ponerlo siempre es obligatorio y el nombre también.
+Los parametros no son obligatorios se ponen los () aunque no haya parametros. Parametros: Tipo de parametro, nombre del parametro se separan con comas. 
+todos los metodos tienen que estar dentro de una base, el orden de los métodos tambien da igual.
+El valor retornado es el resultado de una expresión return "Saludo"+mays;
+El valor retornado es  un literal return "Saludo";
+El valor retornado es una variable return +mays;
+las variables de los metodos son locales al metodo 
+variable local es aquella cuyo ambito es el metodo (ambito es donde se puede ver esa variable, donde esta visible)
+Efectividad de la ram cuando una variable es local. +
+Ej practica dados clase jugador, clase dados, clase botes.
+paradigma definicion de clases o tipos de datos. 
+un objeto es una clase en ejecucion cada objeto es unico y diferente porque tienen un espacio en la memoria.
+creacion de objetos con el new --> Le da una posición en memoria con su estado y comportamiento.
+uso--> se usa invocando al método. 
+Los objetos se destruyen automaticamente con el recolector de basura.
+NullPointerException --> estamos haciendo referencia a un objeto que no esta creado.
+referencia --> las variables de tipo objeto se llaman asi puede ser nula o hacer referencia a otro objeto. referencia a la posicion en memoria donde empieza un objeto.
+herencia: parecida a las isa en cuanto a diseño
+polimorfismo: gracias a la herencia podemos hacer que el mismo metodo funcione de formas diferentes dependiendo el objeto que le llama. 
+acceso --> protegido para las herencias. 
+la interfaz de la clase publica es los datos que queremos o nos interesa proporcionar a terceros para que lo puedan usar. 
+-------------------------------------------------------------------------------------------------
+Constructores
+Un constructor es un método no estático que se ejecuta automáticamente cuando se crea un objeto de la clase. Sirve para inicializar los datos de la clase.
+Reglas:
+Método no estático.
+Tiene el mismo nombre que la clase.
+Puede tener cero o más argumentos.
+No devuelve ningún valor (ni siquiera void).
+Debe ser público.
+Una clase por defecto siempre tiene un constructor, es el que se llama por defecto cuando hacemos un objeto new sin parametros. (Se crea el objeto en memoria y el estado inicial del objeto es el valor de los atributos, en el caso de la clase Punto es 0,0 ya que es una valor numerico).
+Para anular el constructor por defecto tenemos que crear un constructor con parametros.
+Sobrecargar el constructor --> Dejar el constructor por defecto y el constructor por parametro.
+-------------------------------------------------------------------------------------------------
+Clase Object
+Metodos heredados no aparecen en negrita a diferencia de los creados que si aparecen con negrita
+Todos los objetos java van a tener estos tres metodos: toString(), equals(), getClass().
+toString() --> **Para que devuelva la cadena tenemos que reprogramar el metodo sino devuelve la posición que ocupa el objeto en memoria.
+@Override indica que se esta sobreescribiendo o reprogramando el metodo con respecto al heredado
+equals() -->
+getClass()--> Te dice de que tipo es el objeto.   
+System.out.println(p1.getClass());class poo.Punto
+Una interfaz se utiliza para reunir metodos para poder ser utilizados, de las interface no se pueden crear objetos y no se pueden programar. 
+Cuando tenga que ordenar una coleccion de objetos conviene usar CompareTo. 
+Los metodos que implementa una interfaz son todos abstractos
+Miembros estáticos --> Aquel que es definido con la palabra reservada Static.Pueden ser métodos y atributos. *Metodos de clase o de instancia --> Son llamados desde un objeto de la clase.
+Los miembros estáticos tienen la caracteristica de que son compartidos por todos los objetos de una clase
+Ej matemáticas numero pi, o el numero de vidas
