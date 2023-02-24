@@ -11,7 +11,7 @@ import java.time.LocalDate;
  */
 public class AppAlumnos {
 
-    public static void mostrarAlumno (Alumno alumno){
+    public static void mostrarAlumno(Alumno alumno) {
         System.out.println("Datos del Alumno ");
         System.out.println("Numero de matricula " + alumno.getNum_matricula());
         System.out.println("Nombre " + alumno.getNombre());
@@ -20,6 +20,7 @@ public class AppAlumnos {
         System.out.println("Nota " + alumno.getNota());
 
     }
+
     public static void main(String[] args) {
 
         //Creamos el objeto Alumno
@@ -29,7 +30,6 @@ public class AppAlumnos {
         System.out.println(alum1.getNota());
         //Damos valores a los atributos
         String nombre = "Juan";
-
 
         alum1.setNum_matricula("22-23/100");
         alum1.setNombre(nombre);
@@ -46,5 +46,5 @@ public class AppAlumnos {
         System.out.println(alum1.getNombre());
 
     }
-    
+
 }

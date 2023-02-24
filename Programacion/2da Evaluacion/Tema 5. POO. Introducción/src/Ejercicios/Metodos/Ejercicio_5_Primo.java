@@ -3,7 +3,6 @@
  * Copyright (C) EDUARDO MARTiN-SONSECA (maraloeDev)
  * ****************************************************************************
  */
-
 package Ejercicios.Metodos;
 
 import java.util.Scanner;
@@ -13,12 +12,14 @@ import java.util.Scanner;
  * @author marti
  */
 public class Ejercicio_5_Primo {
+
     static Scanner teclado = new Scanner(System.in);
-    public static void esPrimo(){
-        
+
+    public static void esPrimo() {
+
         System.out.println("Introduce un numero");
-        int primo=teclado.nextInt();
-        int contador=0;
+        int primo = teclado.nextInt();
+        int contador = 0;
         for (int i = 1; i <= primo; i++) {
 
             if ((primo % i) == 0) {
@@ -32,9 +33,9 @@ public class Ejercicio_5_Primo {
             System.out.println("No es primo");
         }
     }
-    
+
     public static void main(String[] args) {
         esPrimo();
     }
-    
+
 }

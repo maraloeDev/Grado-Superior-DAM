@@ -10,9 +10,9 @@ import java.time.LocalDate;
 /**
  * @author maraloed
  */
-
 //ATTRIBUTES
 public class Alumno {
+
     private String num_matricula;
     private String nombre;
     private String apellidos;
@@ -20,7 +20,6 @@ public class Alumno {
     private double nota;
 
     //CONSTRUCTORS
-
     public Alumno() {
     }
 
@@ -69,12 +68,12 @@ public class Alumno {
     //toString
     @Override
     public String toString() {
-        return "Alumno{" +
-                "num_matricula='" + num_matricula + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", apellidos='" + apellidos + '\'' +
-                ", fecha_nacimiento=" + fecha_nacimiento +
-                ", nota=" + nota +
-                '}';
+        return "Alumno{"
+                + "num_matricula='" + num_matricula + '\''
+                + ", nombre='" + nombre + '\''
+                + ", apellidos='" + apellidos + '\''
+                + ", fecha_nacimiento=" + fecha_nacimiento
+                + ", nota=" + nota
+                + '}';
     }
 }

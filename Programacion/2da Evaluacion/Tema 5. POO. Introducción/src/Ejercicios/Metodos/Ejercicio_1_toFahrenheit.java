@@ -16,7 +16,7 @@ public class Ejercicio_1_toFahrenheit {
         System.out.println("Indique una tenperatura en grados celsius");
         double celsius = teclado.nextDouble();
 
-        double formula = (celsius * 9/5) +32;
+        double formula = (celsius * 9 / 5) + 32;
         return formula;
     }
 

@@ -3,7 +3,6 @@
  * Copyright (C) EDUARDO MARTiN-SONSECA (maraloeDev)
  * ****************************************************************************
  */
-
 package Ejercicios.POO.FigurasGeometricas;
 
 import Ejercicios.POO.Punto.Punto;
@@ -12,8 +11,8 @@ import Ejercicios.POO.Punto.Punto;
  *
  * @author Eduardo Martin Sonseca
  */
-public class Triangulo extends Punto{
-    
+public class Triangulo extends Punto {
+
     private double base;
     private double altura;
 
@@ -43,16 +42,14 @@ public class Triangulo extends Punto{
     public String toString() {
         return "Triangulo{" + "base=" + base + ", altura=" + altura + '}';
     }
-    
-    
-    public double areaTriangulo(){
+
+    public double areaTriangulo() {
         double areaTriangulo = (this.base * this.altura) / 2;
         return areaTriangulo;
     }
-    
-    public double perimetroTriangulo(){
-        
-        
+
+    public double perimetroTriangulo() {
+
     }
 
 }

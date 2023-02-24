@@ -3,7 +3,6 @@
  * Copyright (C) EDUARDO MARTiN-SONSECA (maraloeDev)
  * ****************************************************************************
  */
-
 package Ejercicios.POO.FigurasGeometricas;
 
 import Ejercicios.POO.Punto.Punto;
@@ -12,8 +11,8 @@ import Ejercicios.POO.Punto.Punto;
  *
  * @author Eduardo MartinSonseca
  */
-public class Circulo extends Punto{
-    
+public class Circulo extends Punto {
+
     private double radio;
 
     public Circulo(double radio, double x, double y) {
@@ -35,19 +34,18 @@ public class Circulo extends Punto{
     }
 
     /*De todas las figuras nos interesa conocer su área y perímetro*/
-    
-    public double areaCirculo(){
-        
+    public double areaCirculo() {
+
         double areaCirculo = Math.PI * (Math.pow(this.radio, 2));
-        
+
         return areaCirculo;
     }
-    
-    public double perimetroCirculo(){
-        
+
+    public double perimetroCirculo() {
+
         double perimetroCirculo = 2 * Math.PI * this.radio;
         return perimetroCirculo;
-        
+
     }
 
 }

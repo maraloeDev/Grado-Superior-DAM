@@ -9,9 +9,9 @@ import java.awt.Font;
 import java.util.Scanner;
 
 public class Ejercicio_2_Divisor {
-    
+
     public static void divisorEntero() {
-        
+
         Scanner teclado = new Scanner(System.in);
         System.out.println("Introduce un numero entero");
         int entero = teclado.nextInt();
@@ -21,14 +21,14 @@ public class Ejercicio_2_Divisor {
 
         do {
 
-            if ((entero == divisor) || (divisor > entero )) {
+            if ((entero == divisor) || (divisor > entero)) {
                 System.out.println("El numero entero y el divisor son iguales");
             }
             System.out.println("Introduce un numero entero");
-             entero = teclado.nextInt();
+            entero = teclado.nextInt();
 
             System.out.println("Introduce un divisor");
-             divisor = teclado.nextInt();
+            divisor = teclado.nextInt();
 
         } while (entero == divisor);
 
@@ -36,7 +36,7 @@ public class Ejercicio_2_Divisor {
     }
 
     public static void main(String[] args) {
-     divisorEntero();
+        divisorEntero();
     }
-    
+
 }

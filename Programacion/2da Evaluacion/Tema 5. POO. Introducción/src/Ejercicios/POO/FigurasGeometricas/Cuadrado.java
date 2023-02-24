@@ -3,7 +3,6 @@
  * Copyright (C) EDUARDO MARTiN-SONSECA (maraloeDev)
  * ****************************************************************************
  */
-
 package Ejercicios.POO.FigurasGeometricas;
 
 import Ejercicios.POO.Punto.Punto;
@@ -12,8 +11,8 @@ import Ejercicios.POO.Punto.Punto;
  *
  * @author Eduardo Martin Sonseca
  */
-public class Cuadrado extends Punto{
-    
+public class Cuadrado extends Punto {
+
     private double lado;
 
     public Cuadrado(double lado, double x, double y) {
@@ -33,24 +32,24 @@ public class Cuadrado extends Punto{
     public String toString() {
         return "Cuadrado{" + "lado=" + lado + '}';
     }
-    
-    public double areaCuadrado(){
+
+    public double areaCuadrado() {
         double areaCuadrado = Math.pow(this.lado, this.lado);
         return areaCuadrado;
     }
-    
-    public double diagonalCuadrado(){
-        
+
+    public double diagonalCuadrado() {
+
         double areaCuadrado = Math.pow(this.lado, this.lado) + Math.pow(this.lado, this.lado);
-        
+
         double trunks = areaCuadrado * 100;
         double trunks2 = trunks / 100;
-        
+
         return trunks2;
-        
+
     }
-    
-    public double perimetroCuadrado(){
+
+    public double perimetroCuadrado() {
         double perimetroCuadrado = (this.lado + this.lado + this.lado + this.lado);
         return perimetroCuadrado;
     }
