@@ -12,7 +12,6 @@ import java.util.Scanner;
  *
  * @author maraloed
  */
-
 public class Contacto {
 
     static Scanner teclado = new Scanner(System.in);
@@ -23,11 +22,15 @@ public class Contacto {
     private String nombreContacto;
     private int telefono_Contacto;
 
-    public Contacto(int id_contacto, String nombreContacto, int telefono_Contacto) {
-        this.id_contacto = id_contacto;
-        this.nombreContacto = nombreContacto;
-        this.telefono_Contacto = telefono_Contacto;
+//    public Contacto(int id_contacto, String nombreContacto, int telefono_Contacto) {
+//        this.id_contacto = id_contacto;
+//        this.nombreContacto = nombreContacto;
+//        this.telefono_Contacto = telefono_Contacto;
+//    }
+
+    public Contacto() {
     }
+    
 
     public int getId_contacto() {
         return id_contacto;
@@ -60,20 +63,52 @@ public class Contacto {
 
     public void anadirContacto() {
 
-String respuesta;
+        String respuesta;
         do {
-        System.out.println("Introduce el nuevo nombre del contacto");
-            String nuevo = teclado.nextLine();
-            personas.add(nuevo);
+            System.out.println("Introduce el nuevo nombre del contacto");
+            String nuevoNombre = teclado.nextLine();
 
-        if (nuevo.equals(this.nombreContacto)) {
-            System.out.println("Contacto ya extistente");
-        }else {
-            System.out.println("Contacto creado correctamente");
-        }
+            while (this.nombreContacto.isBlank()) {
+
+                System.out.println("El nombre no debe de estar vacio, vuelve a introducirlo");
+                this.telefono_Contacto = teclado.nextInt();
+            }
+            personas.add(nuevoNombre);
+
+            if (nuevoNombre.equals(this.nombreContacto)) {
+                System.out.println("Contacto ya extistente");
+            } else {
+                System.out.println("Contacto creado correctamente");
+            }
             System.out.println("Quiere anadir otro contacto");
 
-         respuesta= teclado.nextLine();
+            respuesta = teclado.nextLine();
+
+        } while (respuesta == "S");
+    }
+    
+    public void anadirNumero() {
+
+        String respuesta;
+        do {
+            System.out.println("Introduce un numero de telefono");
+            String nuevoNumero = teclado.nextLine();
+
+            while (this.nombreContacto.isBlank()) {
+
+                System.out.println("El nombre no debe de estar vacio, vuelve a introducirlo");
+                this.telefono_Contacto = teclado.nextInt();
+            }
+            personas.add(nuevoNumero);
+
+            if (nuevoNumero.equals(this.telefono_Contacto)) {
+                System.out.println("Telefono ya extistente");
+            } else {
+                System.out.println("Telefono creado correctamente");
+            }
+            System.out.println("Quiere anadir otro contacto");
+
+            respuesta = teclado.nextLine();
 
         } while (respuesta == "S");
     }
