@@ -1,0 +1,13 @@
+---------ENUNCIADOS CONSULTAS (join)---------------
+
+-- 1 Que taquillas se han dado con un numero de acceso a Julian
+
+-- 2 Que personas que ha hecho una reserva 
+
+-- 3 Sacar del animador Jesus  en cuantos eventos ha participado
+
+-- 4 En cuantos eventos en total han participado cada animador
+
+-- (subconsulta)
+
+-- 1 Todos los usuarios que no han organizado ningun evento
