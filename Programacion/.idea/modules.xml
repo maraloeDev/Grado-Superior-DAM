@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/2da Evaluacion/2da Evaluacion.iml" filepath="$PROJECT_DIR$/2da Evaluacion/2da Evaluacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1ra Evaluacion/Examen 1ra Evaluación/Examen 1ra Evaluación.iml" filepath="$PROJECT_DIR$/1ra Evaluacion/Examen 1ra Evaluación/Examen 1ra Evaluación.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Programacion.iml" filepath="$PROJECT_DIR$/.idea/Programacion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1ra Evaluacion/Práctica1-Juego de los dados/Práctica1-Juego de los dados.iml" filepath="$PROJECT_DIR$/1ra Evaluacion/Práctica1-Juego de los dados/Práctica1-Juego de los dados.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1ra Evaluacion/Tema 1. Identificación de los elementos de un programa informático. El lenguaje Java/Tema 1. Identificación de los elementos de un programa informático. El lenguaje Java.iml" filepath="$PROJECT_DIR$/1ra Evaluacion/Tema 1. Identificación de los elementos de un programa informático. El lenguaje Java/Tema 1. Identificación de los elementos de un programa informático. El lenguaje Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1ra Evaluacion/Tema 2. Elementos básicos del lenguaje Java/Tema 2. Elementos básicos del lenguaje Java.iml" filepath="$PROJECT_DIR$/1ra Evaluacion/Tema 2. Elementos básicos del lenguaje Java/Tema 2. Elementos básicos del lenguaje Java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1ra Evaluacion/Tema 3. Estructuras de control/Tema 3. Estructuras de control.iml" filepath="$PROJECT_DIR$/1ra Evaluacion/Tema 3. Estructuras de control/Tema 3. Estructuras de control.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1ra Evaluacion/Tema 4. Utilización de objetos/Tema 4. Utilización de objetos.iml" filepath="$PROJECT_DIR$/1ra Evaluacion/Tema 4. Utilización de objetos/Tema 4. Utilización de objetos.iml" />
+    </modules>
+  </component>
+</project>

@@ -59,6 +59,7 @@ public class FigurasApp {
             case "4":
                 System.out.println("El area del triangulo es " + triangulo1.areaTriangulo());
                 System.out.println("El perimetro del triangulo es " + triangulo1.perimetroTriangulo());
+                break;
             default:
                 System.out.println("Opcion no contemplada");
 
