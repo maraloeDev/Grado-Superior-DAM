@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2dc1a924-680a-4c97-a0e6-3adc8b7f28f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/Racional/Racional.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/Racional.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/Racional/Ejercicio_4_Racional.pdf" afterDir="false" />
-    </list>
+    <list default="true" id="2dc1a924-680a-4c97-a0e6-3adc8b7f28f5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,14 +25,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/marti/OneDrive/Grado-Superior-DAM/Programacion",
-    "settings.editor.selected.configurable": "jformdesigner.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/OneDrive/Grado-Superior-DAM/Programacion&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;jformdesigner.java&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\marti\OneDrive\Grado-Superior-DAM\Programacion\2da Evaluacion\Tema 5. POO. Introducción\src\Ejercicios\POO\Racional" />
