@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2dc1a924-680a-4c97-a0e6-3adc8b7f28f5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/Persona/PersonaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/.netbeans_automatic_build" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/.netbeans_update_resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Ejercicios/Arrays/Ejercicio Array.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Ejercicios/Metodos/TEMA5-Ejercicios métodos.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Ejercicios/POO/FigurasGeometricas/Ejercicio_2_iguras.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Ejercicios/POO/Persona/Ejercicio_3_Persona.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Ejercicios/POO/Punto/Ejercicio_1_Punto.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Ejercicios/POO/Racional.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Ejercicios/POO/Televisor.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Teoria/TEMA5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/build/classes/Teoria/Tema 5. POO. Introducción.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/nbproject/private/private.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/FigurasGeometricas/FigurasApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/FigurasGeometricas/FigurasApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/Racional/Racional.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/Racional.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/2da Evaluacion/Tema 5. POO. Introducción/src/Ejercicios/POO/Racional/Ejercicio_4_Racional.pdf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +36,11 @@
     "settings.editor.selected.configurable": "jformdesigner.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\marti\OneDrive\Grado-Superior-DAM\Programacion\2da Evaluacion\Tema 5. POO. Introducción\src\Ejercicios\POO\Racional" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="PersonaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ejercicios.POO.Persona.PersonaApp" />
