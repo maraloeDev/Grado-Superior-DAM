@@ -20,7 +20,11 @@ public class PuntoApp {
 
         p1.muevePunto(10, 54);
         System.out.println("Punto movido " + p1);
-
+        
+        p1.distancia(2, 47);
+        System.out.println("La distancia a sido " + p1);
+        
+        
         p1.centro();
         System.out.println("El centro de la pantalla es " + p1);
 

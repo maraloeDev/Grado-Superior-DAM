@@ -11,11 +11,11 @@ import Ejercicios.POO.Punto.Punto;
  *
  * @author Eduardo Martin Sonseca
  */
-public class Cuadrado extends Punto {
+public class Figura_Cuadrado extends Punto {
 
     private double lado;
 
-    public Cuadrado(double lado, double x, double y) {
+    public Figura_Cuadrado(double lado, double x, double y) {
         super(x, y);
         this.lado = 21;
     }

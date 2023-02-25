@@ -11,17 +11,19 @@ import Ejercicios.POO.Punto.Punto;
  *
  * @author Eduardo Martin Sonseca
  */
-public class Triangulo extends Punto {
-
+public class Figura_Triangulo extends Punto {
+    //ATRIBUTOS
     private double base;
     private double altura;
-
-    public Triangulo(double base, double altura, double x, double y) {
+    private double lado;
+    //CONTRUCTOR
+    public Figura_Triangulo(double base, double altura, double lado, double x, double y) {
         super(x, y);
         this.base = base;
         this.altura = altura;
+        this.lado = lado;
     }
-
+    //G Y S
     public double getBase() {
         return base;
     }
@@ -38,11 +40,20 @@ public class Triangulo extends Punto {
         this.altura = altura;
     }
 
+    public double getLado() {
+        return lado;
+    }
+
+    public void setLado(double lado) {
+        this.lado = lado;
+    }
+    
+    //toSRING
     @Override
     public String toString() {
         return "Triangulo{" + "base=" + base + ", altura=" + altura + '}';
     }
-
+    //METODOS
     public double areaTriangulo() {
         double areaTriangulo = (this.base * this.altura) / 2;
         return areaTriangulo;
@@ -50,6 +61,8 @@ public class Triangulo extends Punto {
 
     public double perimetroTriangulo() {
 
+        return this.lado= Math.pow(this.lado, 3);
+                
     }
 
 }

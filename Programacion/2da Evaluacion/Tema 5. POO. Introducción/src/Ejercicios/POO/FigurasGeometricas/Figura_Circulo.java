@@ -11,11 +11,11 @@ import Ejercicios.POO.Punto.Punto;
  *
  * @author Eduardo MartinSonseca
  */
-public class Circulo extends Punto {
+public class Figura_Circulo extends Punto {
 
     private double radio;
 
-    public Circulo(double radio, double x, double y) {
+    public Figura_Circulo(double radio, double x, double y) {
         super(x, y);
         this.radio = radio;
     }
