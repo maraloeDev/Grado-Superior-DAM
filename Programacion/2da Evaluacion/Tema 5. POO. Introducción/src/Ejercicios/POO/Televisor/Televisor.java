@@ -1,42 +1,43 @@
 /*
- * *
- *  * *****************************************************************************
- *  * Copyright (C) EDUARDO MARTiN-SONSECA (maraloeDev)
- *  * ****************************************************************************
- *
+ * *****************************************************************************
+ * Copyright (C) EDUARDO MARTiN-SONSECA (maraloeDev)
+ * ****************************************************************************
  */
-
 package Ejercicios.POO.Televisor;
 
+/**
+ * @author marti
+ */
 public class Televisor {
 
-    // ATRIBUTOS
-    private String numero_serie;
+    //ATRIBUTOS
+    private String numeroSerie;
     private double pulgadas;
-    private int canales;
+    private int numeroCanales;
     private int canal;
-    private boolean encenderse;
-    private int volumen;
-    private boolean mute;
+    private boolean encenderTelevision; //True si esta encendida y false si no esta encendida
+    private int volumenTelevisor; //El volumen va de 0 a 30
+    private boolean quitarSonido; //True si esta silenciada, y false si no esta silenciada
 
-    // CONSTRUCTOR
-    public Televisor(String numero_serie, double pulgadas, int canales, int volumen, boolean mute) {
-        this.numero_serie = numero_serie;
+    //CONSTRUCTORES
+
+
+    public Televisor(String numeroSerie, double pulgadas, int numeroCanales, int canal, boolean encenderTelevision, int volumenTelevisor, boolean quitarSonido) {
+        this.numeroSerie = numeroSerie;
         this.pulgadas = pulgadas;
-        this.canales = canales;
+        this.numeroCanales = numeroCanales;
         this.canal = 1;
-        this.encenderse = true;
-        this.volumen = 30;
-        this.mute = mute;
-    }
-    // GETTER AND SETTER
-
-    public String getNumero_serie() {
-        return numero_serie;
+        this.encenderTelevision = encenderTelevision;
+        this.volumenTelevisor = volumenTelevisor;
+        this.quitarSonido = false;
     }
 
-    public void setNumero_serie(String numero_serie) {
-        this.numero_serie = numero_serie;
+    public String getNumeroSerie() {
+        return numeroSerie;
+    }
+
+    public void setNumeroSerie(String numeroSerie) {
+        this.numeroSerie = numeroSerie;
     }
 
     public double getPulgadas() {
@@ -47,12 +48,12 @@ public class Televisor {
         this.pulgadas = pulgadas;
     }
 
-    public int getCanales() {
-        return canales;
+    public int getNumeroCanales() {
+        return numeroCanales;
     }
 
-    public void setCanales(int canales) {
-        this.canales = canales;
+    public void setNumeroCanales(int numeroCanales) {
+        this.numeroCanales = numeroCanales;
     }
 
     public int getCanal() {
@@ -60,78 +61,46 @@ public class Televisor {
     }
 
     public void setCanal(int canal) {
+        if (this.canal > this.numeroCanales) {
+            System.out.println("Canal no existente");
+        }
         this.canal = canal;
     }
 
-    public boolean isEncenderse() {
-        return encenderse;
+    public boolean isEncenderTelevision() {
+        return encenderTelevision;
     }
 
-    public void setEncenderse(boolean encenderse) {
-        this.encenderse = encenderse;
+    public void setEncenderTelevision(boolean encenderTelevision) {
+        this.encenderTelevision = encenderTelevision;
     }
 
-    public int getVolumen() {
-        return volumen;
+    public int getVolumenTelevisor() {
+        return volumenTelevisor;
     }
 
-    public void setVolumen(int volumen) {
-        this.volumen = volumen;
+    public void setVolumenTelevisor(int volumenTelevisor) {
+        this.volumenTelevisor = volumenTelevisor;
     }
 
-    public boolean isMute() {
-        return mute;
+    public boolean isQuitarSonido() {
+        return quitarSonido;
     }
 
-    public void setMute(boolean mute) {
-        this.mute = mute;
+    public void setQuitarSonido(boolean quitarSonido) {
+        this.quitarSonido = quitarSonido;
     }
 
-    // toString
     @Override
     public String toString() {
-        return "Televisor{" + "numero_serie=" + numero_serie + ", pulgadas=" + pulgadas + ", canales=" + canales + ", canal=" + canal + ", encenderse=" + encenderse + ", volumen=" + volumen + ", mute=" + mute + '}';
-    }
-
-
-    // Metodos
-
-    public void subirCanal() {
-        this.canal++;
-        if (this.canal <= 1) {
-            this.canal = 1;
-        }
-    }
-
-
-    public void bajarCanal() {
-        this.canal--;
-        if (this.canal <= 1) {
-            this.canal = 1;
-        }
-    }
-
-    public void bajarVolumen() {
-        this.volumen--;
-        if (this.volumen <= 0) {
-            this.volumen = 1;
-        }
-    }
-
-    public void subirVolumen() {
-        this.volumen++;
-        if (this.volumen <= 0) {
-            this.volumen = 1;
-        }
-    }
-
-    public boolean encenderse(boolean encender) {
-        if (encender == this.encenderse) {
-            this.canal = 1;
-            return true;
-        } else {
-            return false;
-        }
+        return "Estado del Televisor " +
+                "numeroSerie = '" + numeroSerie + '\'' +
+                ", pulgadas = " + pulgadas +
+                ", numeroCanales  =" + numeroCanales +
+                ", canal = " + canal +
+                ", encenderTelevision = " + encenderTelevision +
+                ", volumenTelevisor = " + volumenTelevisor +
+                ", quitarSonido = " + quitarSonido;
     }
 
     public int cambiarCanal(int cambiar) {
@@ -144,12 +113,44 @@ public class Televisor {
         return this.canal = cambiar;
     }
 
-    public void silencio() {
+    public String subirCanal() {
+        this.canal++;
+        if (this.canal <= 1) {
+            this.canal = 1;
+        }
+        return "canal subido a" + this.canal;
+    }
 
-        if (this.mute == true) {
-            this.volumen = 0;
+    public String bajarCanal() {
+        this.canal--;
+        if (this.canal <= 1) {
+            this.canal = 1;
+        }
+        return "canal bajado a" + this.canal;
+    }
+
+    public String subirVolumen() {
+        this.volumenTelevisor++;
+        if (this.volumenTelevisor > 0) {
+            this.volumenTelevisor = 1;
+        }
+        return "volumen subido a" + this.volumenTelevisor;
+    }
+
+    public String bajarVolumen() {
+        this.volumenTelevisor--;
+        if (this.volumenTelevisor == 1) {
+            this.getVolumenTelevisor();
+        }
+
+        return "volumen bajado a" + this.volumenTelevisor;
+    }
+
+    public void silenciarTelevisor(){
+        if (this.quitarSonido==true){
+            this.volumenTelevisor=0;
         } else {
-            this.getVolumen();
+            this.getVolumenTelevisor();
         }
 
     }
